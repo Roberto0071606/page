@@ -3,29 +3,137 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>San Valentín</title>
-  <!-- Vincula el archivo CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <title>Pregunta de San Valentín</title>
+  <style>
+    /* Estilos globales */
+    body {
+      background-color: #FFCCCC; /* Rojo claro */
+      color: white; /* Texto blanco */
+      font-family: Arial, sans-serif; /* Estilo de fuente */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Asegura que la página ocupe toda la altura de la ventana */
+    }
+
+    #first-screen, #thank-you-screen {
+      text-align: center;
+      padding: 20px;
+      background-color: #FFCCCC; /* Rojo claro */
+      border-radius: 10px;
+      width: 80%;
+      max-width: 500px; /* Limita el ancho máximo */
+    }
+
+    button {
+      font-size: 18px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 15px 30px;
+      border-radius: 20px; /* Botones redondeados */
+      margin: 10px;
+      width: 200px; /* Ancho fijo de los botones */
+      transition: background-color 0.3s ease; /* Efecto al pasar el mouse */
+    }
+
+    #yes-button {
+      background-color: #66FF66; /* Verde suave */
+    }
+
+    #yes-button:hover {
+      background-color: #4CAF50; /* Verde más oscuro al hacer hover */
+    }
+
+    #no-button {
+      background-color: #FF6666; /* Rojo suave */
+    }
+
+    #no-button:hover {
+      background-color: #FF3333; /* Rojo más oscuro al hacer hover */
+    }
+
+    #repeat-button {
+      background-color: #66FF66; /* Verde suave */
+    }
+
+    #repeat-button:hover {
+      background-color: #4CAF50; /* Verde más oscuro al hacer hover */
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  </style>
 </head>
 <body>
-  <div id="app">
-    <div id="first-screen" class="screen">
-      <img src="https://media.tenor.com/tzsZLag0UhQAAAAj/bubu-dudu-sseeyall.gif" alt="Imagen divertida" class="image">
-      <p>¿Quieres ser mi San Valentín?</p>
-      <div class="buttons">
-        <button id="yes-button">Sí</button>
-        <button id="no-button">No</button>
-      </div>
+
+  <div id="first-screen">
+    <h1>¿Quieres ser mi San Valentín?</h1>
+    <img src="https://media.tenor.com/tzsZLag0UhQAAAAj/bubu-dudu-sseeyall.gif" alt="Gif de San Valentín" width="150" height="150">
+    <div>
+      <button id="yes-button">Sí</button>
+      <button id="no-button">No</button>
     </div>
-    
-    <div id="thank-you-screen" class="screen" style="display: none;">
-      <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="Imagen de agradecimiento" class="image">
-      <p>¡¡Siuuuuuuuu!! Lo sabía a la primera!! Por eso te amo</p>
+  </div>
+
+  <div id="thank-you-screen" style="display: none;">
+    <h1>¡¡Siuuuuuuuu!! Lo sabía a la primera!! Por eso te amo</h1>
+    <img src="https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif" alt="Gif de Beso" width="150" height="150">
+    <div>
       <button id="repeat-button">Repito !!</button>
     </div>
   </div>
 
-  <!-- Vincula el archivo JavaScript -->
-  <script src="script.js"></script>
+  <script>
+    let negativeMessages = [
+      "No", "¿Estás segura??", "¿Deberías, completamente segura??", "Kha? ¿Por qué aún no es un Yes??",
+      "Amoooor", "Bubs", "Momento Sad :(", "Carmen Milady", "Ya no te hagas bien que quieres",
+      "Tú lo sabes, yo lo sé", "Mmmm", "Sí", "Aaaaa daltónica, prueba verde"
+    ];
+
+    let negativeMessageIndex = 0;
+
+    let yesButton = document.getElementById("yes-button");
+    let noButton = document.getElementById("no-button");
+    let repeatButton = document.getElementById("repeat-button");
+
+    let firstScreen = document.getElementById("first-screen");
+    let thankYouScreen = document.getElementById("thank-you-screen");
+
+    yesButton.addEventListener('click', function() {
+      firstScreen.style.display = 'none';
+      thankYouScreen.style.display = 'block';
+    });
+
+    noButton.addEventListener('click', function() {
+      if (negativeMessageIndex === negativeMessages.length - 1) {
+        negativeMessageIndex = 0;
+      } else {
+        negativeMessageIndex++;
+      }
+      noButton.innerText = negativeMessages[negativeMessageIndex];
+    });
+
+    repeatButton.addEventListener('click', function() {
+      // Reiniciar el índice de los mensajes de los botones
+      negativeMessageIndex = 0;
+
+      // Restablecer el texto del botón "No" al mensaje inicial "No"
+      noButton.innerText = negativeMessages[negativeMessageIndex]; // "No"
+      
+      // Regresar a la pantalla inicial
+      firstScreen.style.display = 'block';
+      thankYouScreen.style.display = 'none';
+    });
+  </script>
+
 </body>
 </html>
