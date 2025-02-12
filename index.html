@@ -36,12 +36,11 @@
       border-radius: 20px; /* Botones redondeados */
       margin: 10px;
       width: 200px; /* Ancho fijo de los botones */
-      transition: background-color 0.3s ease; /* Efecto al pasar el mouse */
+      transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto al pasar el mouse */
     }
 
     #yes-button {
       background-color: #66FF66; /* Verde suave */
-      transition: all 0.3s ease; /* Transición para el cambio de tamaño */
     }
 
     #yes-button:hover {
@@ -131,7 +130,7 @@
         negativeMessageIndex++;
       }
 
-      // Aumentar el tamaño del botón "Sí" cuando se presiona "No"
+      // Aumentar el tamaño del botón "Sí" de manera uniforme
       yesButtonHeight += 10;
       yesButtonWidth += 20;
       yesButtonFontSize += 2;
