@@ -1,79 +1,65 @@
 body {
-  font-family: Arial, sans-serif;
+  background-color: #FFCCCC; /* Rojo claro */
+  color: white; /* Texto blanco */
+  font-family: Arial, sans-serif; /* Estilo de fuente */
   margin: 0;
   padding: 0;
-  background-color: #f8d7da; /* Fondo rojo claro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Asegura que la página ocupe toda la altura de la ventana */
+}
+
+#first-screen, #thank-you-screen {
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  padding: 20px;
+  background-color: #FFCCCC; /* Rojo claro */
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px; /* Limita el ancho máximo */
 }
 
-#app {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100%;
+button {
+  font-size: 18px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 15px 30px;
+  border-radius: 20px; /* Botones redondeados */
+  margin: 10px;
+  width: 200px; /* Ancho fijo de los botones */
+  transition: background-color 0.3s ease; /* Efecto al pasar el mouse */
 }
 
-.screen {
-  display: none;
+#yes-button {
+  background-color: #66FF66; /* Verde suave */
 }
 
-.image {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
+#yes-button:hover {
+  background-color: #4CAF50; /* Verde más oscuro al hacer hover */
+}
+
+#no-button {
+  background-color: #FF6666; /* Rojo suave */
+}
+
+#no-button:hover {
+  background-color: #FF3333; /* Rojo más oscuro al hacer hover */
+}
+
+#repeat-button {
+  background-color: #66FF66; /* Verde suave */
+}
+
+#repeat-button:hover {
+  background-color: #4CAF50; /* Verde más oscuro al hacer hover */
+}
+
+h1 {
+  font-size: 30px;
   margin-bottom: 20px;
 }
 
 p {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 20px; /* Espacio entre los botones */
-}
-
-button {
-  background-color: #4CAF50; /* Color verde suave */
-  color: white;
-  padding: 15px 40px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 30px; /* Botones redondeados */
-  transition: background-color 0.3s ease;
-  display: inline-block;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-button:focus {
-  outline: none;
-}
-
-#no-button {
-  background-color: #f44336; /* Color rojo suave */
-}
-
-#no-button:hover {
-  background-color: #da190b;
-}
-
-#repeat-button {
-  background-color: #4CAF50; /* Color verde suave */
-  padding: 15px 30px;
-  border-radius: 30px;
-}
-
-#repeat-button:hover {
-  opacity: 0.8;
+  font-size: 20px;
 }
