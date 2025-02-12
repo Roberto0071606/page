@@ -1,132 +1,79 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8d7da;
-    text-align: center;
-  }
-  
-  #app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-  }
-  
-  .screen {
-    display: none;
-  }
-  
-  .image {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-  }
-  
-  button {
-    background-color: #4CAF50;
-    color: white;body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f8d7da; /* Fondo rojo claro */
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-      
-      #app {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        width: 100%;
-      }
-      
-      .screen {
-        display: none;
-      }
-      
-      .image {
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        margin-bottom: 20px;
-      }
-      
-      p {
-        font-size: 24px;
-        margin-bottom: 20px;
-      }
-      
-      .buttons {
-        display: flex;
-        justify-content: center;
-        gap: 20px; /* Espacio entre los botones */
-      }
-      
-      button {
-        background-color: #4CAF50; /* Color verde suave */
-        color: white;
-        padding: 15px 40px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-        border-radius: 30px; /* Botones redondeados */
-        transition: background-color 0.3s ease;
-        display: inline-block;
-      }
-      
-      button:hover {
-        opacity: 0.8;
-      }
-      
-      button:focus {
-        outline: none;
-      }
-      
-      #no-button {
-        background-color: #f44336; /* Color rojo suave */
-      }
-      
-      #no-button:hover {
-        background-color: #da190b;
-      }
-      
-      #repeat-button {
-        background-color: #4CAF50; /* Color verde suave */
-        padding: 15px 30px;
-        border-radius: 30px;
-      }
-      
-      #repeat-button:hover {
-        opacity: 0.8;
-      }
-      
-    padding: 15px 32px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    margin: 10px;
-    border-radius: 5px;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  button:focus {
-    outline: none;
-  }
-  
-  #no-button {
-    background-color: #f44336;
-  }
-  
-  #no-button:hover {
-    background-color: #da190b;
-  }
-  
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8d7da; /* Fondo rojo claro */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.screen {
+  display: none;
+}
+
+.image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espacio entre los botones */
+}
+
+button {
+  background-color: #4CAF50; /* Color verde suave */
+  color: white;
+  padding: 15px 40px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 30px; /* Botones redondeados */
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:focus {
+  outline: none;
+}
+
+#no-button {
+  background-color: #f44336; /* Color rojo suave */
+}
+
+#no-button:hover {
+  background-color: #da190b;
+}
+
+#repeat-button {
+  background-color: #4CAF50; /* Color verde suave */
+  padding: 15px 30px;
+  border-radius: 30px;
+}
+
+#repeat-button:hover {
+  opacity: 0.8;
+}
