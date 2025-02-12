@@ -30,7 +30,9 @@ noButton.addEventListener('click', function() {
 repeatButton.addEventListener('click', function() {
   // Reiniciar el índice de los mensajes de los botones
   negativeMessageIndex = 0;
-  noButton.innerText = negativeMessages[negativeMessageIndex]; // Resetear el texto del botón "No"
+  
+  // Reiniciar el texto del botón "No" a su valor inicial
+  noButton.innerText = "No"; // Volver al mensaje original "No"
   
   // Regresar a la pantalla inicial
   firstScreen.style.display = 'block';
