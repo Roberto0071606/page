@@ -37,6 +37,8 @@
       margin: 10px;
       width: 200px; /* Ancho fijo de los botones */
       transition: background-color 0.3s ease, transform 0.3s ease; /* Efecto al pasar el mouse */
+      display: inline-block;
+      text-align: center;
     }
 
     #yes-button {
@@ -109,18 +111,14 @@
     let thankYouScreen = document.getElementById("thank-you-screen");
 
     // Inicialización del tamaño del botón "Sí"
-    let yesButtonHeight = 50;
-    let yesButtonWidth = 200;
-    let yesButtonFontSize = 18;
+    let yesButtonScale = 1;  // Escala inicial
 
     yesButton.addEventListener('click', function() {
       firstScreen.style.display = 'none';
       thankYouScreen.style.display = 'block';
 
       // Restablecer el tamaño del botón "Sí" al ser presionado
-      yesButton.style.height = "50px";
-      yesButton.style.width = "200px";
-      yesButton.style.fontSize = "18px";
+      yesButton.style.transform = "scale(1)";  // Vuelve a la escala original
     });
 
     noButton.addEventListener('click', function() {
@@ -130,14 +128,10 @@
         negativeMessageIndex++;
       }
 
-      // Aumentar el tamaño del botón "Sí" de manera uniforme
-      yesButtonHeight += 10;
-      yesButtonWidth += 20;
-      yesButtonFontSize += 2;
+      // Aumentar el tamaño del botón "Sí" de manera uniforme usando escala
+      yesButtonScale += 0.1;
 
-      yesButton.style.height = yesButtonHeight + "px";
-      yesButton.style.width = yesButtonWidth + "px";
-      yesButton.style.fontSize = yesButtonFontSize + "px";
+      yesButton.style.transform = `scale(${yesButtonScale})`;
 
       noButton.innerText = negativeMessages[negativeMessageIndex];
     });
@@ -154,13 +148,8 @@
       thankYouScreen.style.display = 'none';
 
       // Restablecer el tamaño del botón "Sí" al estado inicial
-      yesButtonHeight = 50;
-      yesButtonWidth = 200;
-      yesButtonFontSize = 18;
-
-      yesButton.style.height = yesButtonHeight + "px";
-      yesButton.style.width = yesButtonWidth + "px";
-      yesButton.style.fontSize = yesButtonFontSize + "px";
+      yesButtonScale = 1;
+      yesButton.style.transform = `scale(${yesButtonScale})`;
     });
   </script>
 
