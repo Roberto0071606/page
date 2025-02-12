@@ -28,6 +28,11 @@ noButton.addEventListener('click', function() {
 });
 
 repeatButton.addEventListener('click', function() {
+  // Reiniciar el índice de los mensajes de los botones
+  negativeMessageIndex = 0;
+  noButton.innerText = negativeMessages[negativeMessageIndex]; // Resetear el texto del botón "No"
+  
+  // Regresar a la pantalla inicial
   firstScreen.style.display = 'block';
   thankYouScreen.style.display = 'none';
 });
